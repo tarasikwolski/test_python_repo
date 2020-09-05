@@ -5,4 +5,4 @@ class Car(Movable):
         pass
 
     def move(self):
-        print("jade")
+        print("Jade")
