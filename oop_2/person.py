@@ -1,10 +1,19 @@
 from datetime import date
+from enum import Enum
+
+
+class Sex(Enum):
+    MALE = 1
+    FEMALE = 2
+
 
 class Person:
-    def __init__(self, name: str, surname: str, DOB: date):
-        self._name=name
+
+    def __init__(self, name: str, surname: str, birthday: date, sex=Sex.MALE):
+        self._name = name
         self._surname = surname
-        self._DOB = DOB
+        self._birthday = birthday
+        self._sex = sex
 
     @property
     def name(self):
@@ -15,6 +24,14 @@ class Person:
         self._name = value
 
     @property
+    def sex(self):
+        return self._sex
+
+    @sex.setter
+    def sex(self, value: Sex):
+        self._sex = value
+
+    @property
     def surname(self):
         return self._surname
 
@@ -23,9 +40,9 @@ class Person:
         self._surname = value
 
     @property
-    def DOB(self):
-        return self._DOB
+    def birthday(self):
+        return self._birthday
 
-    @DOB.setter
-    def DOB(self, value: date):
-        self._DOB = value
+    @birthday.setter
+    def birthday(self, value: date):
+        self._birthday = value

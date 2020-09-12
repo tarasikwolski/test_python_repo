@@ -33,5 +33,5 @@ class Employee(Person):
             value = date(0, 0, 0)
         return value
 
-    def who_am_i(self):
-        print(f'Nazywam sie {self.name} {self.surname} i zarabiam {self.salary} zł')
+def who_am_i(self):
+    print(f'Nazywam sie {self.name} {self.surname} i zarabiam {self.salary} zł')
